@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/bannerContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true">
+
+    <com.banner.view.BannerViewPager
+        android:id="@+id/bannerViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <com.banner.IndicatorView.CircleIndicatorView
+        android:id="@+id/circleIndicatorView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:fill_mode="none"
+        android:layout_gravity="bottom|center_horizontal"
+        app:indicatorColor="@android:color/darker_gray"
+        app:indicatorSelectColor="@android:color/holo_red_dark"
+        app:indicatorSpace="5dp" />
+</FrameLayout>
