@@ -5,7 +5,6 @@ import android.view.View;
 
 /**
  * @author syb
- * @date 2018/3/5
  */
 
 public interface ViewPagerHolder<T> {

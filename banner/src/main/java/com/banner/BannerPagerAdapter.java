@@ -13,7 +13,6 @@ import java.util.List;
 
 /**
  * @author syb
- * @date 2018/4/20
  */
 
 public class BannerPagerAdapter<T> extends PagerAdapter {

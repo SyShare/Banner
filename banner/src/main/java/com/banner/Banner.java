@@ -293,7 +293,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     }
 
     /**
-     * Set a {@link ViewPager.PageTransformer} that will be called for each attached page whenever
+     * Set a ViewPager.PageTransformer that will be called for each attached page whenever
      * the scroll position is changed. This allows the application to apply custom property
      * transformations to each page, overriding the default sliding look and feel.
      *

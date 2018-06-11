@@ -24,7 +24,6 @@ import java.util.List;
 
 /**
  * @author syb
- * @date 2018/3/5
  */
 
 public class CircleIndicatorView extends View implements ViewPager.OnPageChangeListener {
