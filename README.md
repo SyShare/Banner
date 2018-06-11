@@ -1,5 +1,7 @@
 *********** Banner工具类**************
 
+[compile 'com.banner:banner:1.0']
+
 1、直接在布局引用
        <com.banner.Banner
            android:id="@+id/banner"
