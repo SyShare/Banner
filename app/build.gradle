@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion depends.compileSdkVersion
+    buildToolsVersion depends.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion depends.minSdkVersion
+        targetSdkVersion depends.targetSdkVersion
 
         versionCode 1
         versionName "1.1"
@@ -37,13 +37,16 @@ android {
     }
 }
 
+
+
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile rootProject.ext.dependencies['appcompat-v7']
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    implementation depends.appcompat_v7()
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    implementation rootProject.ext.dependencies['glide']
-    implementation project(':banner')
-    implementation rootProject.ext.dependencies["cardview-v7"]
+    implementation depends.glide()
+//    implementation project(':banner')
+    implementation depends.cardview_v7()
+    implementation 'com.banner:banner:1.0'
 }

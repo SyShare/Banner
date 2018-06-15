@@ -3,12 +3,12 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion depends.compileSdkVersion
+    buildToolsVersion depends.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion depends.minSdkVersion
+        targetSdkVersion depends.targetSdkVersion
         versionCode 1
         versionName "1.0.0"
     }
@@ -20,12 +20,13 @@ android {
         }
     }
 
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    compileOnly rootProject.ext.dependencies['support-v4']
-    implementation rootProject.ext.dependencies['appcompat-v7']
+    compileOnly depends.appcompat_v7()
+    compileOnly depends.support_v4()
 }
 
 
