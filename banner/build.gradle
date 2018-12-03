@@ -36,7 +36,7 @@ dependencies {
 def siteUrl = 'https://github.com/SyShare/Banner' // 项目的主页
 def gitUrl = 'https://github.com/SyShare/Banner.git' // Git仓库的url
 // 版本号，下次更新是只需要更改版本号即可
-version = "1.0"
+version = "1.0.1"
 group = "com.banner" //一般填你唯一的包名
 install {
     repositories.mavenInstaller {

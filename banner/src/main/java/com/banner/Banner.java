@@ -31,7 +31,10 @@ import java.util.List;
 public class Banner extends FrameLayout implements ViewPager.OnPageChangeListener {
     public static final String TAG = Banner.class.getSimpleName();
 
-
+    /**
+     * 数据为1时，隐藏
+     */
+    private boolean isIndicatorViewLimit = false;
     /**
      * ViewPager是否滑动禁止
      */
@@ -162,6 +165,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
             return;
         }
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.Banner);
+        isIndicatorViewLimit = typedArray.getBoolean(R.styleable.Banner_indicator_limit, false);
         delayTime = typedArray.getInt(R.styleable.Banner_delay_time, BannerConfig.DELAY_TIME);
         scrollTime = typedArray.getInt(R.styleable.Banner_scroll_time, BannerConfig.DURATION);
         isAutoPlay = typedArray.getBoolean(R.styleable.Banner_is_auto_play, BannerConfig.IS_AUTO_PLAY);
@@ -197,6 +201,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
 
     /**
      * 是否创建creator
+     *
      * @return
      */
     public boolean isInitCreator() {
@@ -407,6 +412,9 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
      * @param count
      */
     private void setCircleIndicatorCount(int count) {
+        if (isIndicatorViewLimit && count == 1) {
+            return;
+        }
         if (circleIndicatorView != null && indicatorViewVisible) {
             circleIndicatorView.setCount(count);
         }

@@ -7,5 +7,6 @@
         <attr name="scrollable" format="boolean" />
         <attr name="banner_layout" format="reference"/>
         <attr name="indicator_view_visible" format="boolean"/>
+        <attr name="indicator_limit" format="boolean"/>
     </declare-styleable>
 </resources>
