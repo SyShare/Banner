@@ -50,12 +50,13 @@ public class GlideRoundTransform extends BitmapTransformation {
 
     public GlideRoundTransform(Context context, int dp) {
         this(context, dp, Gravity.NONE);
+
     }
 
     public GlideRoundTransform(Context context, int dp, int gravity) {
-        super(context);
-        this.mRadius = dip2px(dp);
-        this.mGravity = gravity;
+
+        mRadius = dip2px(dp);
+        mGravity = gravity;
 
         paint = new Paint();
         paint.setAntiAlias(true);

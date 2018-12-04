@@ -193,7 +193,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     /**
      * 是否为空
      *
-     * @return
+     * @return true data is empty
      */
     public boolean isEmpty() {
         return imageUrls == null || imageUrls.isEmpty();
@@ -202,7 +202,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     /**
      * 是否创建creator
      *
-     * @return
+     * @return isFirst init
      */
     public boolean isInitCreator() {
         return isInitCreator;
@@ -211,7 +211,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     /**
      * 获取当前ViewPager引用
      *
-     * @return
+     * @return BannerViewPager
      */
     public BannerViewPager getViewPager() {
         return viewPager;
@@ -220,8 +220,8 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     /**
      * 是否自动开始
      *
-     * @param isAutoPlay
-     * @return
+     * @param isAutoPlay true auto scroll
+     * @return Banner
      */
     public Banner isAutoPlay(boolean isAutoPlay) {
         this.isAutoPlay = isAutoPlay;
@@ -231,8 +231,8 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     /**
      * 设置时间
      *
-     * @param delayTime
-     * @return
+     * @param delayTime 停留时间
+     * @return Banner
      */
     public Banner setDelayTime(int delayTime) {
         this.delayTime = delayTime;
@@ -242,8 +242,8 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     /**
      * 设置是否允许触发事件
      *
-     * @param scrollable
-     * @return
+     * @param scrollable 滑动事件
+     * @return Banner
      */
     public Banner setScrollable(boolean scrollable) {
         this.scrollable = scrollable;
@@ -253,8 +253,8 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     /**
      * 指示器显示模式
      *
-     * @param fillMode
-     * @return
+     * @param fillMode 指示器显示模式
+     * @return Banner
      */
     public Banner setIndicatorFillMode(CircleIndicatorView.FillMode fillMode) {
         if (!indicatorViewVisible) {
@@ -270,8 +270,8 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     /**
      * 设置 PageTransformer
      *
-     * @param transformer
-     * @return
+     * @param transformer PageTransformer
+     * @return Banner
      */
     public Banner setBannerAnimation(Class<? extends ViewPager.PageTransformer> transformer) {
         try {
@@ -325,8 +325,8 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     /**
      * 设置数据源
      *
-     * @param imageUrls
-     * @return
+     * @param imageUrls 数据源
+     * @return  Banner
      */
     public Banner setData(List<?> imageUrls) {
         this.imageUrls.clear();
@@ -338,8 +338,8 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     /**
      * 设置item构造器
      *
-     * @param creator
-     * @return
+     * @param creator 构造器
+     * @return Banner
      */
     public Banner setViewPagerHolder(ViewPagerHolderCreator creator) {
         isInitCreator = true;
@@ -350,7 +350,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     /**
      * 开始start
      *
-     * @return
+     * @return Banner
      */
     public Banner start() {
         setData();
@@ -360,7 +360,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     /**
      * 更新数据
      *
-     * @param imageUrls
+     * @param imageUrls 数据
      */
     public void update(List<?> imageUrls) {
         this.imageUrls.clear();
@@ -407,9 +407,9 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     }
 
     /**
-     * 设置指示器点数
      *
-     * @param count
+     *
+     * @param count 设置指示器点数
      */
     private void setCircleIndicatorCount(int count) {
         if (isIndicatorViewLimit && count == 1) {

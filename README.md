@@ -43,3 +43,4 @@
             //结束轮播
             banner.stopAutoPlay();
         }
+gradlew clean build bintrayUpload -PbintrayUser=zhengliang1995 -PbintrayKey=xxxxxxxxxxxx -PdryRun=false
