@@ -326,7 +326,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
      * 设置数据源
      *
      * @param imageUrls 数据源
-     * @return  Banner
+     * @return Banner
      */
     public Banner setData(List<?> imageUrls) {
         this.imageUrls.clear();
@@ -373,10 +373,9 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
      * 设置数据并开始
      */
     private void setData() {
-        if (adapter == null) {
-            adapter = new BannerPagerAdapter(imageUrls, creator);
-            viewPager.addOnPageChangeListener(this);
-        }
+        adapter = null;
+        adapter = new BannerPagerAdapter(imageUrls, creator);
+        viewPager.addOnPageChangeListener(this);
         viewPager.setAdapter(adapter);
         viewPager.setFocusable(true);
         setCircleIndicatorCount(count);
@@ -407,15 +406,21 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     }
 
     /**
-     *
-     *
      * @param count 设置指示器点数
      */
     private void setCircleIndicatorCount(int count) {
-        if (isIndicatorViewLimit && count == 1) {
+        if (!indicatorViewVisible) {
             return;
         }
-        if (circleIndicatorView != null && indicatorViewVisible) {
+
+        if (isIndicatorViewLimit
+                && count == 1
+                && circleIndicatorView != null) {
+            circleIndicatorView.setVisibility(GONE);
+            return;
+        }
+        if (circleIndicatorView != null) {
+            circleIndicatorView.setVisibility(VISIBLE);
             circleIndicatorView.setCount(count);
         }
     }

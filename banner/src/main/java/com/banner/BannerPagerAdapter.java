@@ -28,6 +28,10 @@ public class BannerPagerAdapter<T> extends PagerAdapter {
         this.mCreator = creator;
     }
 
+    public void setmDatas(List<T> mDatas) {
+        this.mDatas = mDatas;
+    }
+
     @Override
     public int getCount() {
         if (mDatas == null) {

@@ -50,33 +50,42 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initView() {
         banner = findViewById(R.id.banner);
-        banner.setData(App.images)
-                .setBannerAnimation(Transformer.ScaleInTransformer)
-                .setPageMargin(12)
-                .setIndicatorFillMode(CircleIndicatorView.FillMode.NUMBER)
-                .setOnPageChangeListener(new BannerPageChangeListener() {
-                    @Override
-                    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        banner.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                banner.setData(App.images)
+                        .setBannerAnimation(Transformer.ScaleInTransformer)
+                        .setPageMargin(12)
+                        .setOnPageChangeListener(new BannerPageChangeListener() {
+                            @Override
+                            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-                    }
+                            }
 
-                    @Override
-                    public void onPageSelected(int position) {
-                        Log.d(TAG,"当前位置"+position);
-                    }
+                            @Override
+                            public void onPageSelected(int position) {
+                                Log.d(TAG,"当前位置"+position);
+                            }
 
-                    @Override
-                    public void onPageScrollStateChanged(int state) {
+                            @Override
+                            public void onPageScrollStateChanged(int state) {
 
-                    }
-                })
-                .setViewPagerHolder(new ViewPagerHolderCreator() {
-                    @Override
-                    public ViewPagerHolder createViewHolder() {
-                        return new CustomViewPagerHolder();
-                    }
-                })
-                .start();
+                            }
+                        })
+                        .setViewPagerHolder(new ViewPagerHolderCreator() {
+                            @Override
+                            public ViewPagerHolder createViewHolder() {
+                                return new CustomViewPagerHolder();
+                            }
+                        })
+                        .start();
+            }
+        },2000);
+
+    }
+
+    public void update(View view){
+        banner.update(App.images2);
     }
 
     @Override

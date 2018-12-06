@@ -2,13 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.banner.Banner
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        app:indicator_view_visible="true"
         app:banner_layout="@layout/item_hd_banner"
         android:background="@color/colorPrimary" />
 
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="更新数据"
+        android:onClick="update"/>
 </LinearLayout>

@@ -51,7 +51,7 @@ dependencies {
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation depends.glide()
-//    implementation project(':banner')
+    implementation project(':banner')
     implementation depends.cardview_v7()
-    implementation 'com.banner:banner:1.0'
+//    implementation 'com.banner:banner:1.0'
 }

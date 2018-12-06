@@ -273,7 +273,8 @@ public class CircleIndicatorView extends View implements ViewPager.OnPageChangeL
 
     public void setCount(int count) {
         mCount = count;
-        invalidate();
+        requestLayout();
+//        invalidate();
     }
 
     /**
