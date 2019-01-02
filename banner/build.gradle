@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
-//apply plugin: 'com.novoda.bintray-release'
-apply from: '../maven_push.gradle'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion depends.compileSdkVersion
@@ -38,26 +37,26 @@ dependencies {
 /** 以下开始是将Android Library上传到jcenter的相关配置**/
 
 //项目主页
-//def siteUrl = 'https://github.com/SyShare/Banner'
-//
-//publish{
-//    repoName = 'Banner'//远程仓库名字,不指明，默认是上传到maven
-//    userOrg = 'sharebysy'//bintray.com的用户名
-//    groupId = 'com.banner'//jcenter上的路径
-//    artifactId = 'BannerLibrary'//项目名称
-//    publishVersion = '1.0.1'//版本号
-//    desc = '可配置Banner'//描述，不重要
-//    website = siteUrl//项目主页
-//    licences = ['Apache-2.0']
-//}
-//
-//
-//
-//tasks.withType(Javadoc) {//防止编码问题
-//    options.addStringOption('Xdoclint:none', '-quiet')
-//    options.addStringOption('encoding', 'UTF-8')
-//    options.addStringOption('charSet', 'UTF-8')
-//}
+def siteUrl = 'https://github.com/SyShare/Banner'
+
+publish{
+    repoName = 'Banner'//远程仓库名字,不指明，默认是上传到maven
+    userOrg = 'sharebysy'//bintray.com的用户名
+    groupId = 'com.banner'//jcenter上的路径
+    artifactId = 'BannerLibrary'//项目名称
+    publishVersion = '1.0.1'//版本号
+    desc = '可配置Banner'//描述，不重要
+    website = siteUrl//项目主页
+    licences = ['Apache-2.0']
+}
+
+
+
+tasks.withType(Javadoc) {//防止编码问题
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}
 
 
 //def siteUrl = 'https://github.com/SyShare/Banner' // 项目的主页
